@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="Korea">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="user-scalable=no,initial-scale=1"> -->
+    <title>KIMSOEJIN</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin-top: 30px;
+            padding: 0;
+        }
+        
+        header {
+            background-color: #12859f;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+            position: fixed;
+            left: 0; top: 0; right: 0;
+            margin-bottom: 100px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            display: inline;
+            margin: 0 1em;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 1em;
+            text-align: center;
+        }
+
+        table { margin: auto; }
+
+        td { padding: 15px; }
+
+        .page { display: none; }
+
+        #home { display: block; }
+        
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+        }
+        
+        .recollection_wrap{
+            width: 90%;
+            padding-left: 5%;
+            padding-right: 5%;
+            height: 50%;
+        }
+        .recollection_header{
+            width: 100%;
+            height: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .recollection_body{
+            width: 100%;
+            height: 90%;
+        }
+
+        .recollection_item{
+            float: left;
+            width: 50%;
+            height: 100%;
+        }
+
+        .recollection_item img{
+            width: 100%;
+            height: 100%;
+        }
+
+
+        .recollection_item img { transition:all 0.2s linear; }
+
+        .recollection_item:active img { transform: scale(1.1);}
+
+        
+
+        @media (max-width: 600px) {
+            nav li {
+                display: block;
+                float: left;
+                width: 33%;
+                margin: 0.5em 0;
+            }
+
+            .profile {
+                width: 50px;
+                height: 50px;
+            }
+
+        }
+
+        ol { text-align: left;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.nav-link').on('click', function() {
+                var target = $(this).data('target');
+                $('.page').hide();
+                $('#' + target).show();
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#" class="nav-link" data-target="home">Home</a></li>
+                <li><a href="#" class="nav-link" data-target="recollections">Recollections</a></li>
+                <li><a href="#" class="nav-link" data-target="portfolio">Portfolio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="page">
+            <h1>My Personal Page</h1>
+            <img src="profile.jpg" alt="프로필" class="profile-pic" width="200">
+            <p>Hello! I am a student in the Department of Computer Engineering at Kangwon National University, South Korea.</p>
+            <p>Hello! I am a student in the department of computer engineering.</p>
+            <p>Hello! I am a student in the department of computer engineering.</p>
+            <p>Hello! I am a student in the department of computer engineering.</p>
+            <p>Hello! I am a student in the department of computer engineering.</p>
+        </section>
+
+        <section id="recollections" class="page">
+            <h1>My recollections</h1>            
+            <div class="recollection_wrap">
+                <div class="recollection_header">Family & Friends</div>
+                <div class="recollection_body">
+                    <div class="recollection_item"><img src="recollcetions1.jpg" alt="추억1" height=""></div>
+                    <div class="recollection_item"><img src="recollcetions2.jpg" alt="추억2"></div> 
+                </div>
+            </div>
+
+            <div class="recollection_wrap">
+                <div class="recollection_header">ROKMC</div>
+                <div>
+                    <div class="recollection_item"><img src="recollcetions3.jpg" alt="추억3"></div>
+                    <div class="recollection_item"><img src="recollcetions4.jpg" alt="추억4"></div>
+                </div>
+            </div>
+            
+            <div class="recollection_wrap">
+                <div class="recollection_header">Activity</div>
+                <div class="recollection_body">
+                    <div class="recollection_item"><img src="recollcetions5.jpg" alt="추억5"></div>
+                    <div class="recollection_item"><img src="recollcetions6.jpg" alt="추억6"></div>
+                </div>
+            </div>
+            
+            <div class="recollection_wrap">
+                <div class="recollection_header">Travel</div>
+                <div class="recollection_body">
+                    <div class="recollection_item"><img src="recollcetions7.jpg" alt="추억7"></div>
+                    <div class="recollection_item"><img src="recollcetions8.jpg" alt="추억8"></div>
+                </div>
+            </div>
+            
+            <div class="recollection_wrap">
+                <div class="recollection_header">Picture</div>
+                <div class="recollection_body">
+                    <div class="recollection_item"><img src="recollcetions9.jpg" alt="추억9"></div>
+                    <div class="recollection_item"><img src="recollcetions10.jpg" alt="추억10"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="page">
+            <h1>My Portfolio</h1>
+            <ol>
+                <li>아두이노로 설계한 로봇청소기와 앱인벤터로 제작한 로봇청소기앱<a href="robot.pdf">robot.pdf</a></li>
+                <li>아두이노와 3D 프린터로 제작한 미니 축구보드게임<a href="soccer.pdf">soccer.pdf</a></li>
+                <li>데이터 분석을 통해 확인한 코로나와 크리에이터 사업 성장의 상관관계<a href="data.pdf">data.pdf</a></li>
+                <li>C언어를 사용한 동전 던지기 확률 비교 프로그램<a href="coin.pdf">coin.pdf</a></li>
+            </ol>
+        </section>
+    </main>
+</body>
+</html>
